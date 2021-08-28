@@ -8,8 +8,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={Drafted}></Route>
-        <Route path="/drafted" component={Drafted}></Route>
+        <Route exact path="/" component={Drafted}></Route>
+        <Route exact path="/drafted" component={Drafted}></Route>
         <Route path="/undrafted" component={UnDrafted}></Route>
         <Route component={Default}></Route>
       </Switch>
