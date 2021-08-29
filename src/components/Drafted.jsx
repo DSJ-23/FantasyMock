@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react';
 import NavigationBar from '../components/NavigationBar';
+import SinglePlayer from './SinglePlayer';
 
-const Drafted = () => {
+const Drafted = ({ draftedList, unDraft }) => {
     return (
         <Fragment>
             <NavigationBar></NavigationBar>
-            Drafted
+            {draftedList.map(single_player => (
+                <SinglePlayer key={single_player.pick} player={single_player} playerAction={unDraft}></SinglePlayer>
+            ))}
         </Fragment>
     )
 }
