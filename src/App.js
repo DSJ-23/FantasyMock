@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Drafted from './components/Drafted';
 import Default from './components/Default';
 import UnDrafted from './components/UnDrafted';
+import RawData from './raw';
 
 function App() {
   return (
