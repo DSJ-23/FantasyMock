@@ -1,27 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment } from 'react';
-import { Navbar, Container } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import Styles from './NavStyles';
-// import styled from 'styled-components';
 
-// const SecondaryStyles = styled.div`
-//     div {
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//     }
-// `;
+const colorText = { color: ' rgba(0,0,0,.9)'}
 
-
-const SecondaryNav = () => {
+const SecondaryNav = ({ secondaryText }) => {
 
     return (
         <Fragment>
             <Styles>
-                <Navbar bg="light" variant="dark">
-                     <Container>
-                        <Navbar.Brand>Test</Navbar.Brand>
-                    </Container>
+                <Navbar bg="light" variant="dark" className="justify-content-center">
+                    <Navbar.Brand style={colorText}> { secondaryText } </Navbar.Brand>
                 </Navbar>
             </Styles>   
         </Fragment>
