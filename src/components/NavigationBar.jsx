@@ -1,22 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { Fragment } from 'react';
 import { Nav, Navbar, Container } from 'react-bootstrap';
-import styled from 'styled-components';
 import NavItem from './NavItem';
-
-const Styles = styled.div`
-    a, .navbar-brand, .navbar-nav .nav-link {
-        color: #bbb;
-
-    &:hover {
-      color: white;
-    }
-  }
-
-    .whitecolor {
-        color: white
-    }
-`;
+import Styles from './NavStyles';
 
 const NavigationBar = () => {
 
