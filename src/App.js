@@ -22,24 +22,23 @@ function App() {
     let temp_array = undraftedList
     for (let index = 0; index < temp_array.length; index++){
       if (undrafted_player.pick < temp_array[index].pick){
-        temp_array.slice(index, 0, undrafted_player)
+        temp_array.splice(index, 0, undrafted_player)
         break
       }
     }
-    setUndrafted([undrafted_player, ...undraftedList])
+    setUndrafted(temp_array)
     setDrafted(draftedList.filter(instance => (instance.pick !== pick)))
-    console.log(undraftedList)
   }
 
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/"><Redirect to="/drafted"></Redirect></Route>
-        <Route exact path="/drafted" component={() => <Drafted draftedList={draftedList} unDraft={unDraft}></Drafted>}></Route>
-        <Route path="/undrafted" component={() => <UnDrafted undraftedList={undraftedList} removeUndrafted={removeUnDraftedByPick} ></UnDrafted>}></Route>
-        <Route component={Default}></Route>
-      </Switch>
-    </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/"><Redirect to="/drafted"></Redirect></Route>
+          <Route exact path="/drafted" component={() => <Drafted draftedList={draftedList} unDraft={unDraft}></Drafted>}></Route>
+          <Route path="/undrafted" component={() => <UnDrafted undraftedList={undraftedList} removeUndrafted={removeUnDraftedByPick} ></UnDrafted>}></Route>
+          <Route component={Default}></Route>
+        </Switch>
+      </Router>
   );
 }
 
