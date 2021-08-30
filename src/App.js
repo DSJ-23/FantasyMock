@@ -36,7 +36,7 @@ function App() {
           <Route exact path="/"><Redirect to="/drafted"></Redirect></Route>
           <Route exact path="/drafted" component={() => <Drafted draftedList={draftedList} unDraft={unDraft}></Drafted>}></Route>
           <Route path="/undrafted" component={() => <UnDrafted undraftedList={undraftedList} removeUndrafted={removeUnDraftedByPick} ></UnDrafted>}></Route>
-          <Route component={Default}></Route>
+          <Route component={() => <UnDrafted undraftedList={undraftedList} removeUndrafted={removeUnDraftedByPick}></UnDrafted>}></Route>
         </Switch>
       </Router>
   );
